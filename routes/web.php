@@ -24,3 +24,9 @@ Route::get('/users', [UserController::class, 'get']);
 Route::get('/users/{id}', [UserController::class, 'getId']);
 
 Route::get('/employees', [EmployeeController::class, 'index']);
+Route::get('/employees/create', [EmployeeController::class, 'create']);
+Route::get('/employees/{employee}', [EmployeeController::class, 'show']);
+Route::post('/employees/{employee}', [EmployeeController::class, 'destroy']);
+Route::post('/employees', [EmployeeController::class, 'store']);
+Route::get('/employees/{employee}/edit', [EmployeeController::class, 'edit']);
+Route::post('/employees/{employee}', [EmployeeController::class, 'update']);

@@ -13,7 +13,7 @@ class EmployeeController extends Controller
     public function index()
     {
         // Employee::all();
-        return view('employees', [
+        return view('employees.index', [
             'employees' => Employee::all()
         ]);
     }
@@ -23,7 +23,8 @@ class EmployeeController extends Controller
      */
     public function create()
     {
-        return view('create-employee');
+        return "estoy en create";
+        //return view('employees.create');
     }
 
     /**
@@ -37,9 +38,9 @@ class EmployeeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Employee $employee)
     {
-        //
+        return view('employees.show', compact('employee'));
     }
 
     /**
@@ -61,8 +62,9 @@ class EmployeeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Employee $employee)
     {
-        //
+        $employee->delete();
+        return "Empleado eliminado";
     }
 }
