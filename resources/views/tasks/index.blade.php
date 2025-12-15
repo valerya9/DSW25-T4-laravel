@@ -8,6 +8,9 @@
 </head>
 <body>
     <h1>Listado de Tareas</h1>
+    <p>
+        <a href="{{ Route('tasks.create') }}"> Crear una Tabla</a>
+    </p>
     <table>
         <thead>
             <tr>
